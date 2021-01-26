@@ -30,7 +30,7 @@ Usage
 Capfile:
 
 ```ruby
-require 'capistrano/sylog'
+require 'capistrano/syslog'
 ```
 
 Contributing
