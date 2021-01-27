@@ -3,6 +3,8 @@ Capistrano Syslog
 
 capistrano plugin to log revison by syslog
 
+[![Gem Version](https://badge.fury.io/rb/capistrano-syslog.svg)](https://badge.fury.io/rb/capistrano-syslog)
+
 Installation
 ------------
 
