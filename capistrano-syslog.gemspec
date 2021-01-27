@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Capistrano::Syslog::VERSION
   spec.authors       = ["hiboma"]
   spec.email         = ["hiroyan@gmail.com"]
-  spec.summary       = %q{Syslog for Capistrano v3}
-  spec.description   = %q{Syslog for Capistrano v3}
+  spec.summary       = %q{Capistrano v3 plugin to syslog}
+  spec.description   = %q{Capistrano v3 plugin to syslog current_revision by using logger}
   spec.homepage      = "https://github.com/hiboma/capistrano-syslog"
   spec.license       = "MIT"
 
