@@ -3,11 +3,17 @@ namespace :syslog do
   set :tag, 'capistrano'
 
   set :starting_format,  -> {
-    "deploy starting revision:%s" % fetch(:current_revision)
+    "deploy starting repository:%s revision:%s" % [
+      fetch(:repo_url),
+      fetch(:current_revision),
+    ]
   }
 
   set :finishing_format, -> {
-    "deploy finishing revision:%s" % fetch(:current_revision)
+    "deploy finishing repository:%s revision:%s" % [
+      fetch(:repo_url),
+      fetch(:current_revision),
+    ]
   }
 
   desc 'syslog current revision after deploy:starting ( `deploy:set_current_revision` is actual )'
