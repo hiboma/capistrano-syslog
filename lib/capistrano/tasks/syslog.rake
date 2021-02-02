@@ -18,7 +18,7 @@ namespace :syslog do
 
   desc 'syslog current revision after deploy:starting ( `deploy:set_current_revision` is actual )'
   task :deploy_starting do
-    on roles(:all) do
+    on release_roles(:all) do
       execute "logger -i -s -t %s %s" % [
         fetch(:tag),
         fetch(:starting_format),
@@ -28,7 +28,7 @@ namespace :syslog do
 
   desc 'syslog current revision after deploy:finishing'
   task :deploy_finishing do
-    on roles(:all) do
+    on release_roles(:all) do
       execute "logger -i -s -t %s %s" % [
         fetch(:tag),
         fetch(:finishing_format),
