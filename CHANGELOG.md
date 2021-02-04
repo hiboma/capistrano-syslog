@@ -1,3 +1,7 @@
+### 0.4.0
+
+ * security fix: mask user/password of repo_url to avoid lealking the credential (e.g. repo_url contains x-oauth-basic )
+
 ### 0.3.0
 
  * behavior change: only syslog on `release_roles`
