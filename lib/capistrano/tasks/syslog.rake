@@ -1,17 +1,39 @@
 namespace :syslog do
 
+  # @return [String]
+  def masked_repo_url
+    repo_url = fetch(:repo_url)
+    if repo_url.match(/\Ahttps/)
+
+      uri = URI.parse(repo_url)
+      if uri.password
+        uri.password = '***'
+      end
+
+      # user is also masked!
+      # e.g. https://password:x-oauth-basic@github.com/example/example.git'
+      if uri.user
+        uri.user = '***'
+      end
+      uri
+    else
+      repo_url
+    end
+  end
+
   set :tag, 'capistrano'
 
   set :starting_format,  -> {
     "deploy starting repository:%s revision:%s" % [
-      fetch(:repo_url),
+      masked_repo_url,
       fetch(:current_revision),
     ]
   }
 
   set :finishing_format, -> {
+    repo_url = fetch(:repo_url)
     "deploy finishing repository:%s revision:%s" % [
-      fetch(:repo_url),
+      masked_repo_url,
       fetch(:current_revision),
     ]
   }
